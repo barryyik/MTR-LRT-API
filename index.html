@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./js/app.js" defer></script>
+    <script src="./js/multi-lang.js" defer></script>
+    <script src="./js/getResponse.js" defer></script>
+    <script src="./js/main.js" defer></script>
+    <title>LRT Next Train</title>
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="/img/icons/icon-192x192.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#FFF">
+    <meta name="theme-color" content="#FFF">
+
+</head>
+<body>
+    <div id="controlDiv">
+        <div id="top-control-div">
+            <div id="top-control-div-wrapper">
+                <div>
+                    <label for="station_id" id="stationNameLabel"><i class="fa fa-train" aria-hidden="true"></i>:</label>
+                    <select name="station_id" id="station_id"></select>
+                    <button id="getDataButton"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+                <div>
+                    <button id="switchLanguageButton" class="multi-language-element__uiName"></button>
+                </div>
+            </div>
+        </div>
+        <div id="shortcut-div">
+            <div id="shortcut-div-top">
+                <p id="saved-stop" class="multi-language-element__uiName"></p>
+                <button id="editShortcutButton" class="multi-language-element__uiName"></button>
+            </div>
+            <div id="shortcut-div-wrapper">
+                <div id="shortcut-1" class="shortcut" data-value="" data-status="normal"></div>
+                <div id="shortcut-2" class="shortcut" data-value="" data-status="normal"></div>
+                <div id="shortcut-3" class="shortcut" data-value="" data-status="normal"></div>
+                <div id="shortcut-4" class="shortcut" data-value="" data-status="normal"></div>
+            </div>
+        </div>
+    </div>
+    <div id="displayDataDiv"></div>
+</body>
+</html>

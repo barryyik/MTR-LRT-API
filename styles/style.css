@@ -1,0 +1,294 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  padding: 2px 6px;
+  border-radius: 5px;
+  border: 1px solid #888;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #EEE;
+}
+
+#controlDiv {
+  margin: auto;
+}
+
+#controlDiv #top-control-div {
+  position: absolute;
+  width: 100%;
+  background-color: #80c6db;
+}
+
+#controlDiv #top-control-div #top-control-div-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 500px;
+  height: 50px;
+  padding: 5px;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#controlDiv #top-control-div #top-control-div-wrapper label {
+  font-size: 16px;
+}
+
+#controlDiv #top-control-div #top-control-div-wrapper select {
+  min-width: 200px;
+  font-size: 15px;
+}
+
+#controlDiv #top-control-div #top-control-div-wrapper #switchLanguageButton {
+  min-width: 45px;
+}
+
+#controlDiv #shortcut-div {
+  max-width: 500px;
+  margin: auto;
+  padding-top: 50px;
+  padding-bottom: 15px;
+}
+
+#controlDiv #shortcut-div #shortcut-div-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5px;
+  padding-top: 15px;
+}
+
+#controlDiv #shortcut-div #shortcut-div-top p {
+  padding: 2px;
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#controlDiv #shortcut-div #shortcut-div-top #editShortcutButton {
+  min-width: 45px;
+}
+
+#controlDiv #shortcut-div #shortcut-div-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#controlDiv #shortcut-div #shortcut-div-wrapper .shortcut {
+  height: 75px;
+  width: 75px;
+  border-radius: 8px;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-size: 15px;
+}
+
+#controlDiv #shortcut-div #shortcut-div-wrapper .shortcut[data-status="inEditMode"] {
+  background-color: #ffb8b8;
+}
+
+#displayDataDiv {
+  max-width: 500px;
+  margin: auto;
+  padding: 0 5px;
+}
+
+#displayDataDiv p {
+  margin: 0px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+#displayDataDiv #displayDataDiv__station-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#displayDataDiv .platformH3 {
+  padding: 0;
+  padding-bottom: 5px;
+  margin: 0;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+#displayDataDiv .errorMsg {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+  font-size: 16px;
+  background-color: #fffd80;
+  border: 1px solid #b9b85f;
+  border-radius: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+table tr {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+table tr th, table tr td {
+  padding: 3px;
+}
+
+table tr th {
+  background-color: #afdfee;
+  font-weight: 600;
+}
+
+/* Loading Animation */
+.lds-ellipsis {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin: 20vh auto;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #80c6db;
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  -webkit-animation: lds-ellipsis1 0.6s infinite;
+          animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  -webkit-animation: lds-ellipsis3 0.6s infinite;
+          animation: lds-ellipsis3 0.6s infinite;
+}
+
+@-webkit-keyframes lds-ellipsis1 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes lds-ellipsis3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@-webkit-keyframes lds-ellipsis2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(24px, 0);
+            transform: translate(24px, 0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(24px, 0);
+            transform: translate(24px, 0);
+  }
+}
+/*# sourceMappingURL=style.css.map */

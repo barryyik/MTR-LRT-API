@@ -1,0 +1,200 @@
+$topDivHeight: 50px;
+$topDivColor: hsl(194, 56%, 68%);
+
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    padding: 2px 6px;
+    border-radius: 5px;
+    border: 1px solid #888;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #EEE;
+}
+
+#controlDiv {
+    margin: auto;
+    #top-control-div {
+        position: absolute;
+        width: 100%;
+        background-color: $topDivColor;
+        #top-control-div-wrapper {
+            display: flex;
+            justify-content: space-between;
+            max-width: 500px;
+            height: $topDivHeight;
+            padding: 5px;
+            margin: auto;
+            align-items: center;
+            label {
+                font-size: 16px;
+            }
+            select {
+                min-width: 200px;
+                font-size: 15px;
+            }
+            #switchLanguageButton {
+                min-width: 45px;
+            }
+        }
+    }
+    #shortcut-div {
+        max-width: 500px;
+        margin: auto;
+        padding-top: $topDivHeight;
+        padding-bottom: 15px;
+        #shortcut-div-top {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            padding-top: 15px;
+            p {
+                padding: 2px;
+                margin: 0;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            #editShortcutButton {
+               min-width: 45px;
+            }
+        }
+        #shortcut-div-wrapper {
+            display: flex;
+            justify-content: space-evenly;
+            .shortcut {
+                height: 75px;
+                width: 75px;
+                border-radius: 8px;
+                border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-size: 15px;
+                &[data-status="inEditMode"] {
+                    background-color: rgb(255, 184, 184);
+                }
+            }
+        }
+    }
+}
+
+#displayDataDiv {
+    max-width: 500px;
+    margin: auto;
+    padding: 0 5px;
+    p {
+        margin: 0px;
+        margin-top: 5px;
+        font-size: 14px;
+    }
+    #displayDataDiv__station-name {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .platformH3 {
+         padding: 0;
+         padding-bottom: 5px;
+         margin: 0;
+         margin-top: 20px;
+         font-size: 16px;
+         font-weight: bolder;
+    }
+    .errorMsg {
+        width: fit-content;
+        padding: 10px;
+        margin: auto;
+        text-align: center;
+        font-size: 16px;
+        background-color: hsl(59, 100%, 75%);
+        border: 1px solid hsl(59, 39%, 55%);
+        border-radius: 10px;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 5px;
+    tr {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        th, td {
+            padding: 3px;
+        }
+        th {
+            background-color: hsl(194, 65%, 81%);
+            font-weight: 600;
+        }
+    }
+}
+
+/* Loading Animation */
+.lds-ellipsis {
+    display: flex;
+    position: relative;
+    margin: 20vh auto;
+    width: 80px;
+    height: 80px;
+}
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: $topDivColor;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+    }
+    @keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+    }
+    @keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}  
