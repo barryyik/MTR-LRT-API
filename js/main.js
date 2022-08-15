@@ -1,7 +1,20 @@
 var languageCode = localStorage.getItem("languageCode") || "1", // 0=en, 1=ch
     isInEditMode = false
 
+var lastQueryStation = null
+var asyncCallCount = 0
+
 document.addEventListener("DOMContentLoaded", () => {
+    // create auto query
+    const autoQueryInSeconds = 20
+    const myTimer = setInterval(async function() { 
+        if ((lastQueryStation !== null) && (asyncCallCount < 1)) {
+            asyncCallCount++
+            await displayDataDivLoadResponse(languageCode, lastQueryStation)
+            asyncCallCount--
+        }
+    }, autoQueryInSeconds * 1000);
+
     // shortcut
     document.querySelector("#shortcut-1").dataset.value = localStorage.getItem("shortcut-1") || "none"
     document.querySelector("#shortcut-2").dataset.value = localStorage.getItem("shortcut-2") || "none"

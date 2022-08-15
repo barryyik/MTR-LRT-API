@@ -97,6 +97,7 @@ async function displayDataDivLoadResponse(language, station_id) {
         })
         newDiv.appendChild(tableNode)
     })
+    lastQueryStation = station_id
     return displayResponse(newDiv)
 }
 
